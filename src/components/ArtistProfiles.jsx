@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import rose from "../assets/4.png";
 import marco from "../assets/2.png";
 import ayla from "../assets/1.png";
@@ -5,21 +7,25 @@ import kim from "../assets/3.png";
 
 const artists = [
   {
+    id: "rose",
     name: "Rose Annie M.",
     role: "Specialized in modern surrealism & expressive portrait art.",
     image: rose,
   },
   {
+    id: "marco",
     name: "Marco Silva",
     role: "Digital illustrator & concept artist for creative projects.",
     image: marco,
   },
   {
+    id: "ayla",
     name: "Ayla Reiko",
     role: "Fine art painter with minimalist & emotional themes.",
     image: ayla,
   },
   {
+    id: "kim",
     name: "Kim Sejeong",
     role: "Contemporary artist mixing colors, culture, and character.",
     image: kim,
@@ -45,7 +51,7 @@ export default function ArtistProfiles() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {artists.map((artist) => (
             <article
-              key={artist.name}
+              key={artist.id}
               className="flex items-center gap-6 bg-[#ecf0ff] rounded-3xl shadow-[0_12px_30px_rgba(0,0,0,0.12)] px-6 py-5"
             >
               {/* FOTO */}
@@ -68,10 +74,14 @@ export default function ArtistProfiles() {
                   </p>
                 </div>
 
+                {/* BUTTON BIOGRAPHY → ROUTE */}
                 <div className="flex justify-end">
-                  <button className="px-4 py-2 rounded-full bg-[#4a4039] text-xs md:text-sm text-white font-medium shadow-md hover:opacity-90 transition">
+                  <Link
+                    to={`/artist/${artist.id}`}
+                    className="px-4 py-2 rounded-full bg-[#4a4039] text-xs md:text-sm text-white font-medium shadow-md hover:opacity-90 transition"
+                  >
                     Biography
-                  </button>
+                  </Link>
                 </div>
               </div>
             </article>

@@ -1,64 +1,62 @@
 // src/data/artists.js
-import artistRose from "../assets/artist-rose.png";
-import artistMarco from "../assets/artist-marco.png";
-import artistAyla from "../assets/artist-ayla.png";
-import artistKim from "../assets/artist-kim.png";
+import rose from "../assets/4.png";
+import marco from "../assets/2.png";
+import ayla from "../assets/1.png";
+import kim from "../assets/3.png";
 
+// DATA UTAMA ARTIST
 export const artists = [
   {
-    id: "rose", // dipakai di URL /artist/rose
+    id: "rose",
     name: "Rose Annie M.",
-    role: "Modern surrealism & expressive portrait artist.",
+    role: "Specialized in modern surrealism & expressive portrait art.",
+    image: rose,
+    // tambahan buat halaman detail:
+    tagline: "Specialized in modern surrealism & expressive portrait art.",
     years: "5+ Years",
-    location: "ArtConnect Studio",
-    avatar: artistRose,
-    heroImage: artistRose, // kalau mau beda, bisa pakai gambar lain
-    shortBio:
-      "Specialized in modern surrealism and expressive portrait art that blends vivid colors with emotional storytelling.",
-    bestArtTitle: "Dreamscape of Colors",
-    bestArtDesc:
-      "A collection of surreal portraits that capture the emotional depth of the human experience."
+    circle: "Canvas Circle",
+    bestArtDescription:
+      "A collection of expressive surrealist portraits that blend reality with dreamlike colors and textures.",
   },
   {
     id: "marco",
     name: "Marco Silva",
-    role: "Digital illustrator & concept artist.",
+    role: "Digital illustrator & concept artist for creative projects.",
+    image: marco,
+    tagline:
+      "Digital illustrator & concept artist who brings cinematic scenes to life.",
     years: "7+ Years",
-    location: "Lisbon, Portugal",
-    avatar: artistMarco,
-    heroImage: artistMarco,
-    shortBio:
-      "Known for bold compositions and cinematic lighting in digital illustrations for games and films.",
-    bestArtTitle: "Neon City Stories",
-    bestArtDesc:
-      "Illustrations that explore futuristic worlds, neon tones, and layered visual narratives."
+    circle: "Concept Studio",
+    bestArtDescription:
+      "Dynamic digital illustrations and concept art developed for various creative projects and visual campaigns.",
   },
   {
     id: "ayla",
     name: "Ayla Reiko",
     role: "Fine art painter with minimalist & emotional themes.",
+    image: ayla,
+    tagline:
+      "Fine art painter with minimalist compositions and emotional storytelling.",
     years: "5 Years",
-    location: "Canvas Circle",
-    avatar: artistAyla,
-    heroImage: artistAyla,
-    shortBio:
-      "Her work focuses on quiet emotions, minimal palettes, and subtle textures on large canvases.",
-    bestArtTitle: "Silent Horizons",
-    bestArtDesc:
-      "A series of paintings that explore solitude, calmness, and emotional stillness."
+    circle: "Canvas Circle",
+    bestArtDescription:
+      "Minimalist fine art pieces that focus on emotion, silence, and subtle visual narratives.",
   },
   {
     id: "kim",
     name: "Kim Sejeong",
     role: "Contemporary artist mixing colors, culture, and character.",
+    image: kim,
+    tagline:
+      "Contemporary artist mixing bold colors, culture, and unique character design.",
     years: "6+ Years",
-    location: "Seoul, South Korea",
-    avatar: artistKim,
-    heroImage: artistKim,
-    shortBio:
-      "Combines bold color blocking with cultural motifs to create striking visual stories.",
-    bestArtTitle: "Fragments of Memory",
-    bestArtDesc:
-      "Works that blend portraiture with abstract shapes and symbolic patterns."
-  }
+    circle: "Color Studio",
+    bestArtDescription:
+      "Colorful contemporary artworks that merge portrait, culture, and graphic elements in a unique style.",
+  },
 ];
+
+// FUNGSI HELPER UNTUK DETAIL PAGE
+export function getArtistById(id) {
+  return artists.find((artist) => artist.id === id);
+}
